@@ -31,6 +31,7 @@ List<Producto> productos = (List<Producto>) request.getAttribute("productos");
         <th>precio</th>
         <th>agregar</th>
         <th>editar</th>
+        <th>eliminar</th>
         <% } %>
     </tr>
 
@@ -45,6 +46,8 @@ List<Producto> productos = (List<Producto>) request.getAttribute("productos");
         <td><%=p.getPrecio()%></td>
         <td><a href="<%=request.getContextPath()%>/carro/agregar?id=<%=p.getId()%>">Agregar al carro</a></td>
         <td><a href="<%=request.getContextPath()%>/productos/form?id=<%=p.getId()%>">Editar</a></td>
+        <td><a onclick="return confirm('esta seguro que desea eliminar?');"
+        href="<%=request.getContextPath()%>/productos/eliminar?id=<%=p.getId()%>">Eliminar</a></td>
         <% } %>
     </tr>
     <% } %>

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 //carro/* es para acceder a las rutas que tengan 'carro' en comun despues de un /
-@WebFilter({"/carro/*"})
+@WebFilter({"/carro/*, ", "/productos/form/*", "/productos/eliminar/*"})
 public class LoginFilter implements Filter {
 
     @Override

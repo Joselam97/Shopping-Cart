@@ -30,6 +30,7 @@ List<Producto> productos = (List<Producto>) request.getAttribute("productos");
         <% if (username.isPresent()) { %>
         <th>precio</th>
         <th>agregar</th>
+        <th>editar</th>
         <% } %>
     </tr>
 
@@ -43,6 +44,7 @@ List<Producto> productos = (List<Producto>) request.getAttribute("productos");
         <% if (username.isPresent()) { %>
         <td><%=p.getPrecio()%></td>
         <td><a href="<%=request.getContextPath()%>/carro/agregar?id=<%=p.getId()%>">Agregar al carro</a></td>
+        <td><a href="<%=request.getContextPath()%>/productos/form?id=<%=p.getId()%>">Editar</a></td>
         <% } %>
     </tr>
     <% } %>

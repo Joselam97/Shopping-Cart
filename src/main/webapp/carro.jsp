@@ -6,20 +6,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Carro de Compras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
+
+<div class="container">
         <h1>Carro de Compras</h1>
 
         <c:choose>
 
         <c:when test="${sessionScope.carro == null || sessionScope.carro.items.isEmpty()}">
-        <p>Lo sentimos no hay productos en el carro de compras!</p>
+        <div class="alert alert-warning">Lo sentimos no hay productos en el carro de compras!</div>
         </c:when>
 
         <c:otherwise>
 
         <form name="formcarro" action="${pageContext.request.contextPath}/carro/actualizar" method="post">
-            <table>
+
+            <table class="table table-hover table-striped">
                 <tr>
                     <th>id</th>
                     <th>nombre</th>
@@ -40,17 +45,20 @@
                 </tr>
                 </c:forEach>
                 <tr>
-                    <td colspan="4" style="text-align: right">Total:</td>
+                    <td colspan="5" style="text-align: right">Total:</td>
                     <td>${carro.total}</td>
                 </tr>
             </table>
-            <a href="javascript:document.formcarro.submit();">Actualizar</a>
+            <a class="btn btn btn-primary" href="javascript:document.formcarro.submit();">Actualizar</a>
         </form>
 
         </c:otherwise>
         </c:choose>
 
-        <p><a href="${pageContext.request.contextPath}/productos">seguir comprando</a></p>
-        <p><a href="${pageContext.request.contextPath}/index.html">volver</a></p>
-    </body>
+        <div class="my-2">
+             <a class="btn btn-sm btn-secondary" href="${pageContext.request.contextPath}/index.html">volver</a>
+             <a class="btn btn-sm btn-success" href="${pageContext.request.contextPath}/productos">seguir comprando</a>
+        </div>
+</div>
+</body>
 </html>

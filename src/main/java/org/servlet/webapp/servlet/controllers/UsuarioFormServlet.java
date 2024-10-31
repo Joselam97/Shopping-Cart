@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-@WebServlet("/usuarios/form")
+@WebServlet("/usuarios/form_usuarios")
 public class UsuarioFormServlet extends HttpServlet {
 
     @Override
@@ -40,7 +40,7 @@ public class UsuarioFormServlet extends HttpServlet {
         req.setAttribute("usuario",usuario);
         req.setAttribute("title",req.getAttribute("title") + ": Registro de usuario");
 
-        getServletContext().getRequestDispatcher("/usuarios/form.jsp").forward(req,resp);
+        getServletContext().getRequestDispatcher("/form_usuarios.jsp").forward(req,resp);
     }
 
     @Override
@@ -97,7 +97,7 @@ public class UsuarioFormServlet extends HttpServlet {
             req.setAttribute("errores",errores);
             req.setAttribute("usuario",usuario);
             req.setAttribute("title",req.getAttribute("title") + ": Formulario de usuario");
-            getServletContext().getRequestDispatcher("/usuarios/form.jsp").forward(req,resp);
+            getServletContext().getRequestDispatcher("/form_usuarios.jsp").forward(req,resp);
         }
     }
 }

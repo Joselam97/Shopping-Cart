@@ -17,6 +17,12 @@ public class ConexionFilter implements Filter {
 
         try(Connection conn = ConexionJDBC.getConnection()){
 
+            if (conn == null) {
+                System.err.println("Conexión es null en el filtro.");
+            } else {
+                System.out.println("Conexión establecida en el filtro.");
+            }
+
             if (conn.getAutoCommit()){
                 conn.setAutoCommit(false);
             }

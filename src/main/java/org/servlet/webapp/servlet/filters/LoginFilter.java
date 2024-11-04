@@ -16,20 +16,26 @@ public class LoginFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        //crea una instancia del servicio login para verificar si el usuario esta autenticado
         LoginService service = new LoginServiceSessionImpl();
+        //obtiene el nombre del usuario de la sesion actual
         Optional<String> username = service.getUsername((HttpServletRequest) request);
+        //convierte el objeto request a HttpServletRequest para obtener el path de la solicitud
         HttpServletRequest httpRequest = (HttpServletRequest) request;
 
-        // Permitir acceso público a la lista de productos
+        //obtiene el path de la solicitud actual
         String path = httpRequest.getServletPath();
+        // Permitir acceso público a la lista de productos, excluyendo las rutas del formulario y eliminacion
         if (path.startsWith("/productos") && !path.startsWith("/productos/form") && !path.startsWith("/productos/eliminar")) {
             chain.doFilter(request, response);
             return;
         }
 
+        //si el usuario esta autenticado, continua con la cadena de filtros o el servlet
         if (username.isPresent()) {
             chain.doFilter(request, response);
         } else {
+            //si el usuario no esta autenticado envia un error 404
             ((HttpServletResponse) response).sendError(HttpServletResponse.SC_UNAUTHORIZED,
                     "Lo sentimos, no estás autorizado para entrar a esta página!");
         }

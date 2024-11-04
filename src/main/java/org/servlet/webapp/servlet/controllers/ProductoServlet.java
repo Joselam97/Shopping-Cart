@@ -23,17 +23,21 @@ public class ProductoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Connection conn = (Connection) req.getAttribute("conn");
-
+        //crea una instancia del servicio de productos usando la base de datos
         ProductoService service = new ProductoServiceJDBCImpl(conn);
+        //obtiene la lista de todos los productos de la base de datos
         List<Producto> productos = service.listar();
 
+        //crea una instancia del servicio de autenticacion y obtiene el nombre de usuario
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
 
+        //agrega los productos, username y titulo como atributos de la solicitud
         req.setAttribute("productos",productos);
         req.setAttribute("username",usernameOptional);
         req.setAttribute("title","Lista de Productos");
+        //redirige a la pagina jsp que muestra la lista de productos
         getServletContext().getRequestDispatcher("/listar_productos.jsp").forward(req,resp);
     }
 }

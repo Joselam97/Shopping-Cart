@@ -31,6 +31,7 @@ public class UsuarioServlet extends HttpServlet {
         req.setAttribute("usuarios",usuarios);
         req.setAttribute("username",usernameOptional);
         req.setAttribute("title","Lista de Usuarios");
+        //redirige a la pagina jsp que muestra la lista de usuarios
         getServletContext().getRequestDispatcher("/listar_usuarios.jsp").forward(req,resp);
     }
 }

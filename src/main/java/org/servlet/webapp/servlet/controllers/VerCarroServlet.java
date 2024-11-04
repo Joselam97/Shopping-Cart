@@ -12,8 +12,10 @@ import java.io.IOException;
 public class VerCarroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //establece el titulo de la pagina agregando el texto "Carro de compras"
         req.setAttribute("title",req.getAttribute("title") + ": Carro de Compras");
 
+        //redirige a la pagina jsp que muestra el contenido del carro de compras
         getServletContext().getRequestDispatcher("/carro.jsp").forward(req,resp);
     }
 }

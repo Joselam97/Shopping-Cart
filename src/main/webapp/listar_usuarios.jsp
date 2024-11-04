@@ -25,7 +25,7 @@
             <td>${u.username}</td>
             <td>${u.email}</td>
             <c:if test="${username.present}">
-                <td><a class="btn btn-sm btn-success" href="${pageContext.request.contextPath}/usuarios/form?id=${u.id}">Editar</a></td>
+                <td><a class="btn btn-sm btn-success" href="${pageContext.request.contextPath}/usuarios/form_usuarios?id=${u.id}">Editar</a></td>
                 <td><a class="btn btn-sm btn-danger" onclick="return confirm('¿Está seguro que desea eliminar?');"
                        href="${pageContext.request.contextPath}/usuarios/eliminar?id=${u.id}">Eliminar</a></td>
             </c:if>

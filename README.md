@@ -1,9 +1,9 @@
 # 🛒 Shopping Cart Application
 
-A J2EE-based web application that manages products and users in a shopping cart system. This project enables full CRUD operations on both products and users, with a responsive, Bootstrap-styled interface for an enhanced user experience.
+A JakartaEE-based (J2EE) web application that manages products and users in a shopping cart system. This project enables full CRUD operations on both products and users, with a responsive, Bootstrap-styled interface for an enhanced user experience.
 
 ##  Features
-- **Built with J2EE**: Provides enterprise-level functionality and structure using Java 2 Platform, Enterprise Edition.
+- **Built with Jakarta-EE**: Provides enterprise-level functionality and structure using Jakarta, Enterprise Edition.
 - **Add Products and Users**: Easily add new users and products to the shopping cart with details like name, price, and quantity.
 - **Update Details**: Modify product quantities, prices, and user details as needed.
 - **View Lists**: View organized lists for both products and users, providing easy access to all entries.
@@ -20,7 +20,7 @@ A J2EE-based web application that manages products and users in a shopping cart 
 - **Perform CRUD Operations** - Create, read, update, and delete entries directly, with seamless database synchronization.
 
   ## 🛠️ Tech Stack
-- **Java (J2EE)** - Core language and platform for application logic and structure.
+- **Java (Jakarta-EE)** - Core language and platform for application logic and structure.
 - **Maven** - Dependency management and build automation.
 - **MySQL** - Database for persistent storage of products and users.
 - **JSP** - Used for creating dynamic forms and lists for products and users.

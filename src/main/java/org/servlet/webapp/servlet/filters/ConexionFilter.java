@@ -4,8 +4,9 @@ import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
 import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.service.ServiceJDBCException;
-import org.servlet.webapp.servlet.util.ConexionJDBC;
+import org.servlet.webapp.servlet.util.ConexionJdbcDS;
 
+import javax.naming.NamingException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -15,7 +16,8 @@ public class ConexionFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        try(Connection conn = ConexionJDBC.getConnection()){
+        try(Connection conn = ConexionJdbcDS.getConnection()){
+
             if (conn == null) {
                 System.err.println("Conexión es null en el filtro.");
             } else {
@@ -36,7 +38,7 @@ public class ConexionFilter implements Filter {
                 e.printStackTrace();
             }
 
-        } catch (SQLException throwables){
+        } catch (SQLException | NamingException throwables){
             throwables.printStackTrace();
         }
     }

@@ -2,7 +2,6 @@ package org.servlet.webapp.servlet.models;
 
 import java.time.LocalDate;
 
-//clase que representa un producto en el sistema con las siguientes parametros
 public class Producto {
     private Long id;
     private String nombre;
@@ -14,7 +13,6 @@ public class Producto {
     public Producto() {
     }
 
-    //Constructor para el producto que contiene los siguientes argumentos
     public Producto(Long id, String nombre, String tipo, int precio) {
         this.id = id;
         this.nombre = nombre;
@@ -24,22 +22,18 @@ public class Producto {
         this.precio = precio;
     }
 
-    //obtiene el id del producto
     public Long getId() {
         return id;
     }
 
-    //establece el id del producto
     public void setId(Long id) {
         this.id = id;
     }
 
-    //obtiene el nombre
     public String getNombre() {
         return nombre;
     }
 
-    //establece el nombre
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -56,7 +50,6 @@ public class Producto {
         return fechaRegistro;
     }
 
-    //establece la fecha de registro utilizando LocalDate para crear la fecha
     public void setFechaRegistro(LocalDate fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }

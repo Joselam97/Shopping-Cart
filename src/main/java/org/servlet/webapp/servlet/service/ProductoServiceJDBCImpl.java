@@ -11,24 +11,18 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-/*Implementacion del servicio de productos y categorias basadas en JDBC
-Proporciona metodos para realizar operaciones CRUD en productos y categorias
-utilizando repositorios especificos para cada entidad*/
+
 public class ProductoServiceJDBCImpl implements ProductoService {
 
-    //Repositorio para operaciones de productos
     private Repository<Producto> repositoryJDBC;
-    //Repositorio para operaciones de categorias
     private Repository<Categoria> repositoryCategoriaJDBC;
 
 
-    //Constructor que inicializa los repositorios con una conexion a la base de datos
     public ProductoServiceJDBCImpl(Connection connection) {
         this.repositoryJDBC = new ProductoRepositoryJDBCImpl(connection);
         this.repositoryCategoriaJDBC = new CategoriaRepositoryImpl(connection);
     }
 
-    //Lista todos los productos en la base de datos
     @Override
     public List<Producto> listar() {
         try {
@@ -38,7 +32,6 @@ public class ProductoServiceJDBCImpl implements ProductoService {
         }
     }
 
-    //Busca un producto por su id
     @Override
     public Optional<Producto> findById(Long id) {
         try {
@@ -48,7 +41,6 @@ public class ProductoServiceJDBCImpl implements ProductoService {
         }
     }
 
-    //Guarda un producto en la base de datos. Puede ser una operacion de insercion o actualizacion
     @Override
     public void guardar(Producto producto) {
         try {
@@ -58,7 +50,6 @@ public class ProductoServiceJDBCImpl implements ProductoService {
         }
     }
 
-    //Elimina un producto de la base de datos por su ID
     @Override
     public void eliminar(Long id) {
         try {
@@ -68,7 +59,6 @@ public class ProductoServiceJDBCImpl implements ProductoService {
         }
     }
 
-    //Lista todas las categorias en la base de datos
     @Override
     public List<Categoria> listarCategoria() {
         try {
@@ -78,7 +68,6 @@ public class ProductoServiceJDBCImpl implements ProductoService {
         }
     }
 
-    //Busca una categoria por su ID
     @Override
     public Optional<Categoria> porIdCategoria(Long id) {
         try {

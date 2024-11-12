@@ -22,22 +22,16 @@ public class UsuarioServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //obtiene la conexion a base de datos
         Connection conn = (Connection) req.getAttribute("conn");
-        //crea una instancia del servicio de productos usando la base de datos
         UsuarioService service = new UsuarioServiceImpl(conn);
-        //obtiene lista de usuarios de la base de datos
         List<Usuario> usuarios = service.listar();
 
-        //crea una instancia del servicio de autenticacion y obtiene el nombre de usuario
         LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
-        //agrega los usuarios, password y titulo como atributos de la solicitud
         req.setAttribute("usuarios",usuarios);
         req.setAttribute("username",usernameOptional);
         req.setAttribute("title","Lista de Usuarios");
-        //redirige a la pagina jsp que muestra la lista de usuarios
         getServletContext().getRequestDispatcher("/listar_usuarios.jsp").forward(req,resp);
     }
 }

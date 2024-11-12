@@ -24,12 +24,9 @@ public class ProductoFormServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //obtiene la conexion de la base de datos
         Connection conn = (Connection) req.getAttribute("conn");
-        //crea una instancia del servicio de productos usando la base de datos
         ProductoService service = new ProductoServiceJDBCImpl(conn);
 
-        //inicializa el id del producto a editar
         long id;
         try{
             id = Long.parseLong(req.getParameter("id"));
@@ -37,10 +34,8 @@ public class ProductoFormServlet extends HttpServlet {
             id = 0L;
         }
 
-        //crea un nuevo objeto Producto y asigna a una categoria vacia
         Producto producto = new Producto();
         producto.setCategoria(new Categoria());
-        //si el id es valido, busca el producto en la base de datos
         if (id > 0) {
             Optional<Producto> o = service.findById(id);
             if (o.isPresent()) {
@@ -48,11 +43,9 @@ public class ProductoFormServlet extends HttpServlet {
             }
         }
 
-        //agrega las categorias y el producto como atributos de la solicitud para el formulario
         req.setAttribute("categorias", service.listarCategoria());
         req.setAttribute("producto",producto);
         req.setAttribute("title",req.getAttribute("title") + ": Formulario de Productos");
-        //redirige al formulario de producto
         getServletContext().getRequestDispatcher("/form.jsp").forward(req, resp);
     }
 
@@ -62,10 +55,8 @@ public class ProductoFormServlet extends HttpServlet {
 
         Connection conn = (Connection) req.getAttribute("conn");
         ProductoService service = new ProductoServiceJDBCImpl(conn);
-        //obtiene y valida los parametros del formulario
         String nombre = req.getParameter("nombre");
 
-        //convierte el precio a integer, en caso de error asigna 0
         Integer precio;
         try {
             precio = Integer.valueOf(req.getParameter("precio"));
@@ -76,7 +67,6 @@ public class ProductoFormServlet extends HttpServlet {
         String sku = req.getParameter("sku");
         String fechaStr = req.getParameter("fecha_registro");
 
-        //convierte el id de la categoria a Long, en caso de error lo asigna a 0
         Long categoriaId;
         try {
             categoriaId = Long.valueOf(req.getParameter("categoria"));
@@ -84,9 +74,7 @@ public class ProductoFormServlet extends HttpServlet {
             categoriaId = 0L;
         }
 
-        //mapa para almacenar los errores de validacion
         Map<String, String> errores = new HashMap<>();
-        //validacion de los campos requeridos y sus restricciones
         if (nombre == null || nombre.isBlank()) {
             errores.put("nombre", "el nombre es requerido!");
         }
@@ -107,14 +95,12 @@ public class ProductoFormServlet extends HttpServlet {
         }
 
 
-//convierte la fecha a LocalDate, en caso de error asigna null
         LocalDate fecha;
         try {
             fecha = LocalDate.parse(fechaStr, DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         } catch (DateTimeParseException e ) {
             fecha = null;
         }
-        //convierte el id del producto a long, en caso de error le asigna 0L
         long id;
         try{
             id = Long.parseLong(req.getParameter("id"));
@@ -122,7 +108,6 @@ public class ProductoFormServlet extends HttpServlet {
             id = 0L;
         }
 
-        //crea y asigna los valores al objeto Producto
         Producto producto = new Producto();
         producto.setId(id);
         producto.setNombre(nombre);
@@ -130,18 +115,14 @@ public class ProductoFormServlet extends HttpServlet {
         producto.setPrecio(precio);
         producto.setFechaRegistro(fecha);
 
-        //crea y asigna una categoria al producto
         Categoria categoria = new Categoria();
         categoria.setId(categoriaId);
         producto.setCategoria(categoria);
 
-        //verifica si no hay errores
         if (errores.isEmpty()) {
-            //guarda el producto en la base de datos
             service.guardar(producto);
             resp.sendRedirect(req.getContextPath() + "/productos");
         } else {
-            //si hay errores, los agrega a la solicitud y redirige al formulario
             req.setAttribute("errores",errores);
             req.setAttribute("categorias", service.listarCategoria());
             req.setAttribute("producto",producto);

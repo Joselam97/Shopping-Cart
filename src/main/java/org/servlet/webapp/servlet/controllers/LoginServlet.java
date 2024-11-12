@@ -17,19 +17,15 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.util.Optional;
 
-//rutas url
 @WebServlet({"/login","/login.html"})
 public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //crea una instancia del servicio de autenticacion
         LoginService auth = new LoginServiceSessionImpl();
-        //obtiene el nombre de usuario de la sesion actual
         Optional<String> usernameOptional = auth.getUsername(req);
 
         if (usernameOptional.isPresent()){
-            //si el usuario ha iniciado sesion
             resp.setContentType("text/html;charset=UTF-8");
             try (PrintWriter out = resp.getWriter()) {
 
@@ -62,7 +58,6 @@ public class LoginServlet extends HttpServlet {
                 out.println("</html>");
             }
         }else {
-            //Si el usuario no esta autenticado lo redirige a la pagina de login
             req.setAttribute("title",req.getAttribute("title") + ": Login");
             getServletContext().getRequestDispatcher("/login.jsp").forward(req,resp);
         }
@@ -70,26 +65,20 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //obtiene nombre y password del formulario de login
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
-        //crea una instancia del servicio de usuario con la conexion de base de datos actual
         UsuarioService service = new UsuarioServiceImpl((Connection) req.getAttribute("conn"));
-        //intenta autenticar al usuario con los datos proporcionados
         Optional<Usuario> usuarioOptional = service.login(username,password);
 
         if (usuarioOptional.isPresent()){
 
             HttpSession session = req.getSession();
-            //si lo autentica guarda el nombre de usuario
             session.setAttribute("username",username);
 
-            //redirige al usuario a la pagina de bienvenida
             resp.sendRedirect(req.getContextPath() + "/login.html");
 
         } else {
-            //si falla envia un error 401 (No autorizado)
             resp.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Lo sentimos no esta autorizado para ingresar a esta pagina!");
         }
     }

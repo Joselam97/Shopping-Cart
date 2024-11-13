@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.servlet.webapp.servlet.models.Usuario;
 import org.servlet.webapp.servlet.service.LoginService;
-import org.servlet.webapp.servlet.service.LoginServiceSessionImpl;
 import org.servlet.webapp.servlet.service.UsuarioService;
 
 import java.io.IOException;
@@ -20,11 +19,14 @@ import java.util.Optional;
 public class LoginServlet extends HttpServlet {
 
     @Inject
+    private LoginService auth;
+
+    @Inject
     private UsuarioService service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginService auth = new LoginServiceSessionImpl();
+
         Optional<String> usernameOptional = auth.getUsername(req);
 
         if (usernameOptional.isPresent()){

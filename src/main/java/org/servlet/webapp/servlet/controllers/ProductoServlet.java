@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.models.Producto;
 import org.servlet.webapp.servlet.service.LoginService;
-import org.servlet.webapp.servlet.service.LoginServiceSessionImpl;
 import org.servlet.webapp.servlet.service.ProductoService;
 
 import java.io.IOException;
@@ -22,13 +21,14 @@ public class ProductoServlet extends HttpServlet {
     @Inject
     private ProductoService service;
 
+    @Inject
+    private LoginService auth;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-
         List<Producto> productos = service.listar();
 
-        LoginService auth = new LoginServiceSessionImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
 

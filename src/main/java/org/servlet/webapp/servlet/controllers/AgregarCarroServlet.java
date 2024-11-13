@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.models.Carro;
 import org.servlet.webapp.servlet.models.ItemCarro;
 import org.servlet.webapp.servlet.models.Producto;
@@ -19,6 +20,7 @@ import java.util.Optional;
 public class AgregarCarroServlet extends HttpServlet {
 
     @Inject
+    @ProductoServicePrincipal
     private ProductoService service;
 
     @Inject

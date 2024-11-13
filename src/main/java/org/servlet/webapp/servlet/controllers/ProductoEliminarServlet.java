@@ -6,6 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.models.Producto;
 import org.servlet.webapp.servlet.service.ProductoService;
 
@@ -17,6 +18,7 @@ public class ProductoEliminarServlet extends HttpServlet {
 
 
     @Inject
+    @ProductoServicePrincipal
     private ProductoService service;
 
     @Override

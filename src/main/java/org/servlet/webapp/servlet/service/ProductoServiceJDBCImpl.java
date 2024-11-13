@@ -2,7 +2,7 @@ package org.servlet.webapp.servlet.service;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 import org.servlet.webapp.servlet.repositories.Repository;
@@ -13,7 +13,7 @@ import java.util.Optional;
 
 
 @ApplicationScoped
-@Named("defecto")
+@ProductoServicePrincipal
 public class ProductoServiceJDBCImpl implements ProductoService {
 
     @Inject

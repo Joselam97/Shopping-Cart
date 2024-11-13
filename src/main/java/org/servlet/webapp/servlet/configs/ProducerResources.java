@@ -3,7 +3,6 @@ package org.servlet.webapp.servlet.configs;
 import jakarta.annotation.Resource;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Produces;
-import jakarta.inject.Named;
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -17,7 +16,7 @@ public class ProducerResources {
 
     @Produces
     @RequestScoped
-    @Named("conn")
+    @MysqlConn
     private Connection beanConnection() throws NamingException, SQLException {
 
         return ds.getConnection();

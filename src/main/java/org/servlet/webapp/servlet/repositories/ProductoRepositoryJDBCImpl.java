@@ -2,7 +2,7 @@ package org.servlet.webapp.servlet.repositories;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.servlet.webapp.servlet.configs.MysqlConn;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 
@@ -14,7 +14,7 @@ import java.util.List;
 public class ProductoRepositoryJDBCImpl implements Repository<Producto>{
 
     @Inject
-    @Named("conn")
+    @MysqlConn
     private Connection conn;
 
 

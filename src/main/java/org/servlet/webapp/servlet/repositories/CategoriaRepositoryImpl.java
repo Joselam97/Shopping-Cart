@@ -2,7 +2,7 @@ package org.servlet.webapp.servlet.repositories;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import jakarta.inject.Named;
+import org.servlet.webapp.servlet.configs.MysqlConn;
 import org.servlet.webapp.servlet.models.Categoria;
 
 import java.sql.*;
@@ -16,7 +16,7 @@ public class CategoriaRepositoryImpl implements Repository<Categoria> {
     private Connection conn;
 
     @Inject
-    public CategoriaRepositoryImpl(@Named("conn") Connection conn) {
+    public CategoriaRepositoryImpl(@MysqlConn Connection conn) {
         this.conn = conn;
     }
 

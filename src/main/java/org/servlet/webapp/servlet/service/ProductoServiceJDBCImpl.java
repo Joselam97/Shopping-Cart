@@ -1,27 +1,26 @@
 package org.servlet.webapp.servlet.service;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
-import org.servlet.webapp.servlet.repositories.CategoriaRepositoryImpl;
-import org.servlet.webapp.servlet.repositories.ProductoRepositoryJDBCImpl;
 import org.servlet.webapp.servlet.repositories.Repository;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 
+@ApplicationScoped
+@Named("defecto")
 public class ProductoServiceJDBCImpl implements ProductoService {
 
+    @Inject
     private Repository<Producto> repositoryJDBC;
+    @Inject
     private Repository<Categoria> repositoryCategoriaJDBC;
 
-
-    public ProductoServiceJDBCImpl(Connection connection) {
-        this.repositoryJDBC = new ProductoRepositoryJDBCImpl(connection);
-        this.repositoryCategoriaJDBC = new CategoriaRepositoryImpl(connection);
-    }
 
     @Override
     public List<Producto> listar() {

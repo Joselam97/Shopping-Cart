@@ -1,5 +1,8 @@
 package org.servlet.webapp.servlet.repositories;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 
@@ -7,13 +10,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@ApplicationScoped
 public class ProductoRepositoryJDBCImpl implements Repository<Producto>{
 
+    @Inject
+    @Named("conn")
     private Connection conn;
 
-    public ProductoRepositoryJDBCImpl(Connection conn) {
-        this.conn = conn;
-    }
 
     @Override
     public List<Producto> listar() throws SQLException {

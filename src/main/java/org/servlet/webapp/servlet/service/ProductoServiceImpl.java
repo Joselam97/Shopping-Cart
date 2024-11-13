@@ -1,5 +1,6 @@
 package org.servlet.webapp.servlet.service;
 
+import jakarta.enterprise.inject.Alternative;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 
@@ -9,6 +10,8 @@ import java.util.Optional;
 
 /*Implementacion de ProductoService para gestionar productos y categorias
 Actualmente, proporciona una lista fija de productos y metodos vacios para guardar y eliminar*/
+
+@Alternative
 public class ProductoServiceImpl implements ProductoService{
 
     @Override

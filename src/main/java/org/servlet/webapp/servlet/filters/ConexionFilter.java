@@ -34,7 +34,6 @@ public class ConexionFilter implements Filter {
             }
 
             try {
-                request.setAttribute("conn",connRequest);
                 chain.doFilter(request,response);
                 connRequest.commit();
             } catch (SQLException | ServiceJDBCException e){

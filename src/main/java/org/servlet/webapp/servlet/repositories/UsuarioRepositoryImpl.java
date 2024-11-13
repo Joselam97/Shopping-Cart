@@ -1,5 +1,8 @@
 package org.servlet.webapp.servlet.repositories;
 
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
 import org.servlet.webapp.servlet.models.Usuario;
 
 import java.sql.*;
@@ -7,9 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+@ApplicationScoped
 public class UsuarioRepositoryImpl implements UsuarioRepository{
 
+    @Inject
+    @Named("conn")
     private Connection conn;
 
     private Usuario getUsuario(ResultSet rs) throws SQLException{
@@ -21,9 +26,6 @@ public class UsuarioRepositoryImpl implements UsuarioRepository{
         return usuario;
     }
 
-    public UsuarioRepositoryImpl(Connection conn) {
-        this.conn = conn;
-    }
 
     @Override
     public List<Usuario> listar() throws SQLException {

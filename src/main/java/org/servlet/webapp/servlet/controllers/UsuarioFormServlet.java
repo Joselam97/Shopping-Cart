@@ -1,5 +1,6 @@
 package org.servlet.webapp.servlet.controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -7,10 +8,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.models.Usuario;
 import org.servlet.webapp.servlet.service.UsuarioService;
-import org.servlet.webapp.servlet.service.UsuarioServiceImpl;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -18,10 +17,11 @@ import java.util.Optional;
 @WebServlet("/usuarios/form_usuarios")
 public class UsuarioFormServlet extends HttpServlet {
 
+    @Inject
+    private UsuarioService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        Connection conn = (Connection) req.getAttribute("conn");
-        UsuarioService service = new UsuarioServiceImpl(conn);
 
         long id;
         try{
@@ -47,8 +47,6 @@ public class UsuarioFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        Connection conn = (Connection) req.getAttribute("conn");
-        UsuarioService service = new UsuarioServiceImpl(conn);
 
         long id;
         try{

@@ -10,10 +10,8 @@ import org.servlet.webapp.servlet.models.Carro;
 import org.servlet.webapp.servlet.models.ItemCarro;
 import org.servlet.webapp.servlet.models.Producto;
 import org.servlet.webapp.servlet.service.ProductoService;
-import org.servlet.webapp.servlet.service.ProductoServiceJDBCImpl;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.Optional;
 
 //ruta url
@@ -21,14 +19,14 @@ import java.util.Optional;
 public class AgregarCarroServlet extends HttpServlet {
 
     @Inject
+    private ProductoService service;
+
+    @Inject
     private Carro carro;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
-
-        Connection conn = (Connection) req.getAttribute("conn");
-        ProductoService service = new ProductoServiceJDBCImpl(conn);
 
 
         Optional<Producto> producto = service.findById(id);

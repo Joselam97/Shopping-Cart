@@ -1,20 +1,35 @@
 package org.servlet.webapp.servlet.models;
 
-import jakarta.enterprise.context.SessionScoped;
-import jakarta.inject.Named;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.inject.Inject;
+import org.servlet.webapp.servlet.configs.CarroCompra;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Logger;
 
-@SessionScoped
-@Named
+
+@CarroCompra
 public class Carro implements Serializable {
     private List<ItemCarro> items;
 
-    public Carro() {
+    @Inject
+    private transient Logger log;
+
+
+    @PostConstruct
+    public void inicializar(){
         this.items = new ArrayList<>();
+        log.info("Inicializando el Carro de Compras!");
+    }
+
+
+    @PreDestroy
+    public void destruir(){
+        log.info("Destruyendo el Carro de Compras");
     }
 
 

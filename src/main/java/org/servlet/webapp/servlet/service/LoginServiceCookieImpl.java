@@ -1,6 +1,5 @@
 package org.servlet.webapp.servlet.service;
 
-import jakarta.enterprise.inject.Alternative;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -8,7 +7,7 @@ import java.util.Arrays;
 import java.util.Optional;
 
 
-@Alternative
+//@Alternative
 public class LoginServiceCookieImpl implements LoginService {
 
     @Override

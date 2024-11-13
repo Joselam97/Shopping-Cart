@@ -11,6 +11,7 @@ import java.util.Optional;
 Actualmente, proporciona una lista fija de productos y metodos vacios para guardar y eliminar*/
 
 
+//@Alternative
 public class ProductoServiceImpl implements ProductoService{
 
     @Override

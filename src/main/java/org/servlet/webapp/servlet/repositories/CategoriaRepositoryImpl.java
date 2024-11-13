@@ -1,8 +1,8 @@
 package org.servlet.webapp.servlet.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.MysqlConn;
+import org.servlet.webapp.servlet.configs.Repository;
 import org.servlet.webapp.servlet.models.Categoria;
 
 import java.sql.*;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@ApplicationScoped
-public class CategoriaRepositoryImpl implements Repository<Categoria> {
+@Repository
+public class CategoriaRepositoryImpl implements CrudRepository<Categoria> {
 
     private Connection conn;
 

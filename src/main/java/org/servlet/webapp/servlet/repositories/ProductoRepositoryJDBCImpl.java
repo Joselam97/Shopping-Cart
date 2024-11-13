@@ -1,22 +1,39 @@
 package org.servlet.webapp.servlet.repositories;
 
-import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.MysqlConn;
+import org.servlet.webapp.servlet.configs.Repository;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
-@ApplicationScoped
-public class ProductoRepositoryJDBCImpl implements Repository<Producto>{
+@Repository
+public class ProductoRepositoryJDBCImpl implements CrudRepository<Producto> {
+
+    @Inject
+    private Logger log;
+
 
     @Inject
     @MysqlConn
     private Connection conn;
 
+
+    @PostConstruct
+    public void inicializar(){
+        log.info("Inicializando el Beans " + this.getClass().getName());
+    }
+
+    @PreDestroy
+    public void destruir(){
+        log.info("Destruyendo el Beans " + this.getClass().getName());
+    }
 
     @Override
     public List<Producto> listar() throws SQLException {

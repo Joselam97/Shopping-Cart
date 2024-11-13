@@ -5,7 +5,7 @@ import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
-import org.servlet.webapp.servlet.repositories.Repository;
+import org.servlet.webapp.servlet.repositories.CrudRepository;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -17,9 +17,9 @@ import java.util.Optional;
 public class ProductoServiceJDBCImpl implements ProductoService {
 
     @Inject
-    private Repository<Producto> repositoryJDBC;
+    private CrudRepository<Producto> repositoryJDBC;
     @Inject
-    private Repository<Categoria> repositoryCategoriaJDBC;
+    private CrudRepository<Categoria> repositoryCategoriaJDBC;
 
 
     @Override

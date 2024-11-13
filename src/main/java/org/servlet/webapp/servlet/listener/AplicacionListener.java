@@ -2,10 +2,8 @@ package org.servlet.webapp.servlet.listener;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebListener;
-import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.HttpSessionEvent;
 import jakarta.servlet.http.HttpSessionListener;
-import org.servlet.webapp.servlet.models.Carro;
 
 @WebListener
 public class AplicacionListener implements ServletContextListener, ServletRequestListener,
@@ -42,10 +40,8 @@ public class AplicacionListener implements ServletContextListener, ServletReques
     @Override
     public void sessionCreated(HttpSessionEvent se) {
         servletContext.log("creando la sesion http!");
-        Carro carro = new Carro();
-        HttpSession session = se.getSession();
-        session.setAttribute("carro",carro);
     }
+
     @Override
     public void sessionDestroyed(HttpSessionEvent se) {
         servletContext.log("destruyendo la sesion http!");

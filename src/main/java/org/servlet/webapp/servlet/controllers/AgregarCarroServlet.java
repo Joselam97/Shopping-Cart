@@ -1,11 +1,11 @@
 package org.servlet.webapp.servlet.controllers;
 
+import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 import org.servlet.webapp.servlet.models.Carro;
 import org.servlet.webapp.servlet.models.ItemCarro;
 import org.servlet.webapp.servlet.models.Producto;
@@ -20,6 +20,9 @@ import java.util.Optional;
 @WebServlet("/carro/agregar")
 public class AgregarCarroServlet extends HttpServlet {
 
+    @Inject
+    private Carro carro;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
@@ -31,11 +34,9 @@ public class AgregarCarroServlet extends HttpServlet {
         Optional<Producto> producto = service.findById(id);
         if (producto.isPresent()){
             ItemCarro item = new ItemCarro(1,producto.get());
-            HttpSession session = req.getSession();
-            Carro carro = (Carro) session.getAttribute("carro");
+
             if (carro == null) {
                 carro = new Carro();
-                session.setAttribute("carro", carro);
             }
             carro.addItemCarro(item);
         }

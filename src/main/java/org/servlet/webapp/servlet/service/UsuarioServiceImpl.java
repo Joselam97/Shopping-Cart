@@ -1,7 +1,7 @@
 package org.servlet.webapp.servlet.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
+import org.servlet.webapp.servlet.configs.Service;
 import org.servlet.webapp.servlet.models.Usuario;
 import org.servlet.webapp.servlet.repositories.UsuarioRepository;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@ApplicationScoped
+@Service
 public class UsuarioServiceImpl implements UsuarioService{
     private UsuarioRepository usuarioRepository;
 

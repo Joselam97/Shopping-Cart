@@ -1,8 +1,8 @@
 package org.servlet.webapp.servlet.service;
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
+import org.servlet.webapp.servlet.configs.Service;
 import org.servlet.webapp.servlet.models.Categoria;
 import org.servlet.webapp.servlet.models.Producto;
 import org.servlet.webapp.servlet.repositories.CrudRepository;
@@ -11,8 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-
-@ApplicationScoped
+@Service
 @ProductoServicePrincipal
 public class ProductoServiceJDBCImpl implements ProductoService {
 

@@ -4,4 +4,10 @@
        xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd"
        version="3.0" bean-discovery-mode="annotated">
 
+    <interceptors>
+        <class>
+            org.servlet.webapp.servlet.interceptors.LoggingInterceptor
+        </class>
+    </interceptors>
+
 </beans>

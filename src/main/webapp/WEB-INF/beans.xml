@@ -8,6 +8,10 @@
         <class>
             org.servlet.webapp.servlet.interceptors.LoggingInterceptor
         </class>
+
+        <class>
+            org.servlet.webapp.servlet.interceptors.TransactionalInterceptor
+        </class>
     </interceptors>
 
 </beans>

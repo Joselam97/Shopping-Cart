@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.models.Carro;
 import org.servlet.webapp.servlet.models.ItemCarro;
-import org.servlet.webapp.servlet.models.Producto;
+import org.servlet.webapp.servlet.models.entities.Producto;
 import org.servlet.webapp.servlet.service.ProductoService;
 
 import java.io.IOException;

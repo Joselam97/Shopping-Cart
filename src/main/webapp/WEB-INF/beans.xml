@@ -12,6 +12,10 @@
         <class>
             org.servlet.webapp.servlet.interceptors.TransactionalInterceptor
         </class>
+
+        <class>
+            org.servlet.webapp.servlet.interceptors.TransactionalJpaInterceptor
+        </class>
     </interceptors>
 
 </beans>

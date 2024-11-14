@@ -1,14 +1,29 @@
-package org.servlet.webapp.servlet.models;
+package org.servlet.webapp.servlet.models.entities;
+
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "productos")
 public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String nombre;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
+
     private int precio;
     private String sku;
+
+    @Column(name = "fecha_registro")
     private LocalDate fechaRegistro;
+
+
 
     public Producto() {
     }

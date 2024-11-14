@@ -1,10 +1,19 @@
-package org.servlet.webapp.servlet.models;
+package org.servlet.webapp.servlet.models.entities;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String username;
     private String password;
     private String email;
+
 
     public Long getId() {
         return id;

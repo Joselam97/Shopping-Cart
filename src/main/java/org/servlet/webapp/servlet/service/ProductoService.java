@@ -1,7 +1,7 @@
 package org.servlet.webapp.servlet.service;
 
-import org.servlet.webapp.servlet.models.Categoria;
-import org.servlet.webapp.servlet.models.Producto;
+import org.servlet.webapp.servlet.models.entities.Categoria;
+import org.servlet.webapp.servlet.models.entities.Producto;
 
 import java.util.List;
 import java.util.Optional;

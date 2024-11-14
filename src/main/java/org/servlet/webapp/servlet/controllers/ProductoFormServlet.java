@@ -7,8 +7,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
-import org.servlet.webapp.servlet.models.Categoria;
-import org.servlet.webapp.servlet.models.Producto;
+import org.servlet.webapp.servlet.models.entities.Categoria;
+import org.servlet.webapp.servlet.models.entities.Producto;
 import org.servlet.webapp.servlet.service.ProductoService;
 
 import java.io.IOException;
@@ -101,11 +101,12 @@ public class ProductoFormServlet extends HttpServlet {
         } catch (DateTimeParseException e ) {
             fecha = null;
         }
-        long id;
+
+        Long id;
         try{
-            id = Long.parseLong(req.getParameter("id"));
+            id = Long.valueOf(req.getParameter("id"));
         } catch (NumberFormatException e) {
-            id = 0L;
+            id = null;
         }
 
         Producto producto = new Producto();

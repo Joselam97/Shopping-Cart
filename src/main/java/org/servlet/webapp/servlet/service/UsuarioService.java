@@ -1,6 +1,6 @@
 package org.servlet.webapp.servlet.service;
 
-import org.servlet.webapp.servlet.models.Usuario;
+import org.servlet.webapp.servlet.models.entities.Usuario;
 
 import java.util.List;
 import java.util.Optional;

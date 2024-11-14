@@ -5,8 +5,8 @@ import jakarta.annotation.PreDestroy;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.MysqlConn;
 import org.servlet.webapp.servlet.configs.Repository;
-import org.servlet.webapp.servlet.models.Categoria;
-import org.servlet.webapp.servlet.models.Producto;
+import org.servlet.webapp.servlet.models.entities.Categoria;
+import org.servlet.webapp.servlet.models.entities.Producto;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Repository
+@RepositoryJdbc
 public class ProductoRepositoryJDBCImpl implements CrudRepository<Producto> {
 
     @Inject

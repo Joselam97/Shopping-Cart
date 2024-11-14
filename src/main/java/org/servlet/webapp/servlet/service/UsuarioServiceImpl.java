@@ -2,20 +2,24 @@ package org.servlet.webapp.servlet.service;
 
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.Service;
-import org.servlet.webapp.servlet.models.Usuario;
+import org.servlet.webapp.servlet.interceptors.TransactionalJpa;
+import org.servlet.webapp.servlet.models.entities.Usuario;
+import org.servlet.webapp.servlet.repositories.RepositoryJpa;
 import org.servlet.webapp.servlet.repositories.UsuarioRepository;
 
-import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
+@TransactionalJpa
+//@TransactionalJDBC
 public class UsuarioServiceImpl implements UsuarioService{
     private UsuarioRepository usuarioRepository;
 
     @Inject
-    public UsuarioServiceImpl(UsuarioRepository usuarioRepository) {
+    //En caso de transicionar a @RepositoryJDBC seria dentro de (..)
+    public UsuarioServiceImpl(@RepositoryJpa UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
 
@@ -23,7 +27,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Optional<Usuario> login(String username, String password) {
         try {
             return Optional.ofNullable(usuarioRepository.porUsername(username)).filter(u -> u.getPassword().equals(password));
-        } catch (SQLException throwables) {
+        } catch (Exception throwables) {
             throw new ServiceJDBCException(throwables.getMessage(),throwables.getCause());
         }
     }
@@ -32,7 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public List<Usuario> listar() {
         try {
             return usuarioRepository.listar();
-        } catch (SQLException e){
+        } catch (Exception e){
             throw new ServiceJDBCException(e.getMessage(),e.getCause());
         }
     }
@@ -41,7 +45,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public Optional<Usuario> porId(Long id) {
         try{
             return Optional.ofNullable(usuarioRepository.porId(id));
-        }catch (SQLException e){
+        }catch (Exception e){
             throw new ServiceJDBCException(e.getMessage(),e.getCause());
         }
     }
@@ -50,7 +54,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public void guardar(Usuario usuario) {
         try{
             usuarioRepository.guardar(usuario);
-        }catch (SQLException e){
+        }catch (Exception e){
             throw new ServiceJDBCException(e.getMessage(),e.getCause());
         }
     }
@@ -59,7 +63,7 @@ public class UsuarioServiceImpl implements UsuarioService{
     public void eliminar(Long id) {
         try{
             usuarioRepository.eliminar(id);
-        }catch (SQLException e){
+        }catch (Exception e){
             throw new ServiceJDBCException(e.getMessage(),e.getCause());
         }
     }

@@ -6,7 +6,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.servlet.webapp.servlet.models.Usuario;
+import org.servlet.webapp.servlet.models.entities.Usuario;
 import org.servlet.webapp.servlet.service.LoginService;
 import org.servlet.webapp.servlet.service.LoginServiceSessionImpl;
 import org.servlet.webapp.servlet.service.UsuarioService;

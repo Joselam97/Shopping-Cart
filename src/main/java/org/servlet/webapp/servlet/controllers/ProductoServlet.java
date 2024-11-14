@@ -7,7 +7,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
-import org.servlet.webapp.servlet.models.Producto;
+import org.servlet.webapp.servlet.models.entities.Producto;
 import org.servlet.webapp.servlet.service.LoginService;
 import org.servlet.webapp.servlet.service.ProductoService;
 

@@ -3,7 +3,7 @@ package org.servlet.webapp.servlet.repositories;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.MysqlConn;
 import org.servlet.webapp.servlet.configs.Repository;
-import org.servlet.webapp.servlet.models.Usuario;
+import org.servlet.webapp.servlet.models.entities.Usuario;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,6 +11,7 @@ import java.util.List;
 
 
 @Repository
+@RepositoryJdbc
 public class UsuarioRepositoryImpl implements UsuarioRepository{
 
     @Inject

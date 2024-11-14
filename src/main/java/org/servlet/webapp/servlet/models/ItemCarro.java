@@ -1,5 +1,7 @@
 package org.servlet.webapp.servlet.models;
 
+import org.servlet.webapp.servlet.models.entities.Producto;
+
 import java.util.Objects;
 
 public class ItemCarro {

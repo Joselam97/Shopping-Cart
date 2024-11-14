@@ -33,6 +33,7 @@ A Jakarta EE-based web application that manages products and users in a shopping
    git clone https://github.com/Joselam97/Shopping-Cart.git
 
 2. **Navigate to the Project Directory**:
+   ```bash
    cd Shopping-Cart
 
 3. **Set up the SQL Database**:
@@ -40,9 +41,10 @@ A Jakarta EE-based web application that manages products and users in a shopping
 - Update the database connection settings in the project configuration to match your MySQL credentials.
 
 4. **Build the Project with Maven**:
-- mvn clean install
+   ```bash
+   mvn clean install
 
-5. **Deploy the Application**:
+6. **Deploy the Application**:
 - Deploy the project on a Jakarta EE Tomcat server.
 
   

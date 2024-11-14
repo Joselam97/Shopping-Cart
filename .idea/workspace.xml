@@ -5,45 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd165882-e7a2-4015-a301-75e86780e90d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalJpaInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CategoriaRepositoryJpaImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/ProductoRepositoryJpaImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/RepositoryJdbc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/RepositoryJpa.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepositoryJpaImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceListImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/util/JpaUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/ProducerResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/ProducerResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/AgregarCarroServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/AgregarCarroServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoEliminarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoEliminarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/ProductoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioEliminarServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioEliminarServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioFormServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioFormServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/controllers/UsuarioServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/entities/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/ItemCarro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/ItemCarro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/entities/Producto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/models/entities/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CategoriaRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CategoriaRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CrudRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/ProductoRepositoryJDBCImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/ProductoRepositoryJDBCImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceJDBCImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,22 +24,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Joselam97"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Joselam97&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Joselam97/Shopping-Cart.git",
-    "accountId": "0fdd2985-4c9f-40a8-bc94-ca9991773a1f"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Joselam97/Shopping-Cart.git&quot;,
+    &quot;accountId&quot;: &quot;0fdd2985-4c9f-40a8-bc94-ca9991773a1f&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2oqmpoCfaqtDXZ0ubcDoCBVKL7Y" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -88,6 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Jose Alvarez/Desktop/Cursos/JavaSpanish/55_Hibernate_Api",
     "settings.editor.selected.configurable": "editor.preferences.folding"
   }
 }]]></component>

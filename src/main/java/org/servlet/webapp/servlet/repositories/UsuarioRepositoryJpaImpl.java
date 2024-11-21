@@ -24,7 +24,7 @@ public class UsuarioRepositoryJpaImpl implements UsuarioRepository{
 
     @Override
     public List<Usuario> listar() throws Exception {
-        return em.createQuery("FROM Usuario", Usuario.class).getResultList();
+        return em.createQuery("SELECT u FROM Usuario u", Usuario.class).getResultList();
     }
 
     @Override

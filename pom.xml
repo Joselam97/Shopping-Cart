@@ -22,7 +22,7 @@
              <dependency>
                  <groupId>jakarta.platform</groupId>
                  <artifactId>jakarta.jakartaee-api</artifactId>
-                 <version>9.0.0</version>
+                 <version>9.1.0</version>
                  <scope>provided</scope>
              </dependency>
 
@@ -33,11 +33,7 @@
                  <version>5.6.15.Final</version>
              </dependency>
 
-             <dependency>
-                 <groupId>com.fasterxml.jackson.core</groupId>
-                 <artifactId>jackson-databind</artifactId>
-                 <version>2.17.0</version>
-             </dependency>
+
 
           <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
           <!-- agregado de maven para usar la conexion 'Connector/J' -->
@@ -54,13 +50,16 @@
               <version>2.0.0</version>
           </dependency>
 
-          <!-- CDI -->
+
+          <!-- CDI
           <dependency>
               <groupId>org.jboss.weld.servlet</groupId>
               <artifactId>weld-servlet-core</artifactId>
               <version>4.0.1.SP1</version>
           </dependency>
+          -->
       </dependencies>
+
 
          <build>
 
@@ -73,15 +72,11 @@
                      <version>3.8.1</version>
                  </plugin>
 
+                 <!-- Servidor Wildfly -->
                  <plugin>
-                     <groupId>org.apache.tomcat.maven</groupId>
-                     <artifactId>tomcat7-maven-plugin</artifactId>
-                     <version>2.2</version>
-                     <configuration>
-                         <url>http://localhost:8080/manager/text</url>
-                         <username>system</username>
-                         <password>system</password>
-                     </configuration>
+                     <groupId>org.wildfly.plugins</groupId>
+                     <artifactId>wildfly-maven-plugin</artifactId>
+                     <version>2.1.0.Final</version>
                  </plugin>
 
                  <plugin>

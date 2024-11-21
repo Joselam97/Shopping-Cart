@@ -1,9 +1,9 @@
 package org.servlet.webapp.servlet.service;
 
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.ProductoServicePrincipal;
 import org.servlet.webapp.servlet.configs.Service;
-import org.servlet.webapp.servlet.interceptors.TransactionalJpa;
 import org.servlet.webapp.servlet.models.entities.Categoria;
 import org.servlet.webapp.servlet.models.entities.Producto;
 import org.servlet.webapp.servlet.repositories.CrudRepository;
@@ -14,18 +14,15 @@ import java.util.Optional;
 
 @Service
 @ProductoServicePrincipal
-@TransactionalJpa
-//@TransactionalJDBC
+@Stateless
 public class ProductoServiceImpl implements ProductoService {
 
     @Inject
     @RepositoryJpa
-    //@RepositoryJdbc
     private CrudRepository<Producto> repositoryJDBC;
 
     @Inject
     @RepositoryJpa
-    //@RepositoryJdbc
     private CrudRepository<Categoria> repositoryCategoriaJDBC;
 
 

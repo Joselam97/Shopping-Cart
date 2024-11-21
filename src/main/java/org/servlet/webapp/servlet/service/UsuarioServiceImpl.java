@@ -1,8 +1,8 @@
 package org.servlet.webapp.servlet.service;
 
+import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import org.servlet.webapp.servlet.configs.Service;
-import org.servlet.webapp.servlet.interceptors.TransactionalJpa;
 import org.servlet.webapp.servlet.models.entities.Usuario;
 import org.servlet.webapp.servlet.repositories.RepositoryJpa;
 import org.servlet.webapp.servlet.repositories.UsuarioRepository;
@@ -12,13 +12,11 @@ import java.util.Optional;
 
 
 @Service
-@TransactionalJpa
-//@TransactionalJDBC
+@Stateless
 public class UsuarioServiceImpl implements UsuarioService{
     private UsuarioRepository usuarioRepository;
 
     @Inject
-    //En caso de transicionar a @RepositoryJDBC seria dentro de (..)
     public UsuarioServiceImpl(@RepositoryJpa UsuarioRepository usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }

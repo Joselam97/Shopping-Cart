@@ -25,9 +25,6 @@
     <!-- url: The JDBC connection url for connecting to your MySQL database.
          -->
 
-    <Resource name="jdbc/mysqlDB" auth="Container" type="javax.sql.DataSource"
-              maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-              username="root" password="SYSTEM" driverClassName="com.mysql.cj.jdbc.Driver"
-              url="jdbc:mysql://localhost:3306/java_curso?serverTimezone=UTC"/>
+
 
 </Context>

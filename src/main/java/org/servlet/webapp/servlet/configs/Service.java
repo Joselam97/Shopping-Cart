@@ -1,7 +1,6 @@
 package org.servlet.webapp.servlet.configs;
 
 
-import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Stereotype;
 import jakarta.inject.Named;
 import org.servlet.webapp.servlet.interceptors.Logging;
@@ -13,7 +12,6 @@ import java.lang.annotation.Target;
 
 
 @Logging
-@ApplicationScoped
 @Stereotype
 @Named
 @Target(ElementType.TYPE)

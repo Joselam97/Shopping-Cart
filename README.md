@@ -21,6 +21,7 @@ A Jakarta EE-based web application that manages products and users in a shopping
 
 ## 🛠️ Tech Stack
 - **Java (Jakarta-EE)** - Core language and platform.
+- **Enterprise JavaBeans (EJB)** - For implementing business logic.
 - **CDI Annotations** - For dependency injection.
 - **JPA and Hibernate** - ORM for database management.
 - **Maven** - Dependency management.

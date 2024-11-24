@@ -1,20 +1,21 @@
 # 🛒 Shopping Cart Application
 
-A Jakarta EE-based web application that manages products and users in a shopping cart system. This project enables full CRUD operations on both products and users, with a responsive, Bootstrap-styled interface for an enhanced user experience.
+A Jakarta EE-based web application that manages products and users in a shopping cart system. This project enables full CRUD operations on products and users, with a responsive, Bootstrap-styled interface for an enhanced user experience.
 
 ## Features
 - **Built with Jakarta-EE**: Provides enterprise-level functionality and structure.
+- **Enterprise JavaBeans (EJB)**: Implements EJB for business logic, improving modularity and scalability.
 - **Add Products and Users**: Add new users and products with details like name, price, and quantity.
 - **Update Details**: Modify product quantities, prices, and user information.
 - **View Lists**: Access organized lists for products and users.
 - **Remove Items**: Delete products and users from the database.
-- **Database Integration**: Uses MySQL with JPA and Hibernate for persistent data storage.
+- **Database Integration**: MySQL with JPA and Hibernate is used for persistent data storage.
 - **Annotations with CDI**: Streamlines object management with CDI annotations.
 - **Styled with Bootstrap**: Provides a polished, responsive UI.
 
 ## 📖 Usage
 - **Product and User Forms** - Use the forms to add or update information.
-- **View Lists** - Access organized lists for both products and users.
+- **View Lists** - Access organized lists for products and users.
 - **Database Sync** - Data is saved in the MySQL database, allowing persistent session storage.
 - **Perform CRUD Operations** - Create, read, update, and delete entries with full database synchronization.
 
@@ -26,6 +27,7 @@ A Jakarta EE-based web application that manages products and users in a shopping
 - **MySQL** - Database for storing data.
 - **JSP** - For dynamic pages.
 - **Bootstrap** - UI styling.
+- **WildFly** - Application server for deploying the project.
 
 ## 🚀 Installation
 1. **Clone the Repository**:
@@ -45,7 +47,7 @@ A Jakarta EE-based web application that manages products and users in a shopping
    mvn clean install
 
 6. **Deploy the Application**:
-- Deploy the project on a Jakarta EE Tomcat server.
+- Deploy the project on a 'wildfly' server.
 
   
 6. **Access the Application**:

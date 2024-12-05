@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd165882-e7a2-4015-a301-75e86780e90d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/ProducerResources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/ProducerResources.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/configs/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalJDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalJpa.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/interceptors/TransactionalJpaInterceptor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CategoriaRepositoryJpaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/CategoriaRepositoryJpaImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepositoryJpaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/repositories/UsuarioRepositoryJpaImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/ProductoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/service/UsuarioServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/util/ConexionJDBC.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/util/ConexionJdbcDS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/servlet/webapp/servlet/util/JpaUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/META-INF/context.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,22 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.44_ShoppingCart [clean].executor": "Run",
-    "Maven.44_ShoppingCart [install].executor": "Run",
-    "Maven.44_ShoppingCart [tomcat7:redeploy].executor": "Run",
-    "Maven.44_ShoppingCart [wildfly:deploy].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Jose Alvarez/Desktop/Cursos/JavaSpanish/44_ShoppingCart",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.folding"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.44_ShoppingCart [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.44_ShoppingCart [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.44_ShoppingCart [tomcat7:redeploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.44_ShoppingCart [wildfly:deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.44_ShoppingCart [wildfly:shutdown].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Jose Alvarez/Desktop/Cursos/JavaSpanish/44_ShoppingCart&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editing.templates&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.servlet.webapp.servlet.interceptors" />

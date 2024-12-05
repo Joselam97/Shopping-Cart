@@ -4,38 +4,46 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
+// Marks the class as a JPA entity and maps it to the "productos" table in the database
 @Entity
 @Table(name = "productos")
 public class Producto {
 
+    // The ID of the product, which is the primary key
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generated using the identity strategy (auto-increment)
     private Long id;
 
     private String nombre;
 
+    // Many-to-One relationship with Categoria (fetch type is lazy to load it when needed)
     @ManyToOne(fetch = FetchType.LAZY)
     private Categoria categoria;
 
     private int precio;
     private String sku;
 
-    @Column(name = "fecha_registro")
+    // The date when the product was registered in the system
+    @Column(name = "fecha_registro") // Column name in the database is 'fecha_registro'
     private LocalDate fechaRegistro;
 
 
-
+    // Default constructor (necessary for JPA)
     public Producto() {
     }
 
+    // Parameterized constructor to initialize Producto with id, name, category type, and price
     public Producto(Long id, String nombre, String tipo, int precio) {
         this.id = id;
         this.nombre = nombre;
+        // Create a Categoria object and set its name based on the 'tipo' argument
         Categoria categoria = new Categoria();
         categoria.setNombre(tipo);
         this.categoria = categoria;
         this.precio = precio;
     }
+
+    // Getter and setter methods for all the fields
 
     public Long getId() {
         return id;

@@ -15,46 +15,52 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Optional;
 
+// URL mapping for both '/login' and '/login.html' paths
 @WebServlet({"/login","/login.html"})
 public class LoginServlet extends HttpServlet {
 
+    // Injecting LoginService to handle login logic (checking user credentials)
     @Inject
     private LoginService auth;
 
+    // Injecting UsuarioService to handle user-related operations like authentication
     @Inject
     private UsuarioService service;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        // Retrieving the username from the session or request (using LoginService)
         Optional<String> usernameOptional = auth.getUsername(req);
 
+        // If a username exists (meaning the user is already logged in)
         if (usernameOptional.isPresent()){
-            resp.setContentType("text/html;charset=UTF-8");
+            resp.setContentType("text/html;charset=UTF-8"); // Setting response content type to HTML with UTF-8 encoding
             try (PrintWriter out = resp.getWriter()) {
 
+                // Writing the HTML response with inline styles and greeting the user
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("    <head>");
                 out.println("        <meta charset='UTF-8'>");
-                out.println("        <title>Hola " + usernameOptional.get() + "</title>");
+                out.println("        <title>Hola " + usernameOptional.get() + "</title>"); // Page title with the username
 
-                // Añadiendo estilo CSS en línea
+                // Adding inline CSS to style the page
                 out.println("        <style>");
                 out.println("            body { font-family: Arial, sans-serif; }");
-                out.println("            .highlight { border-radius: 5px; background-color: #f9f9f9; padding: 10px; }"); // Fondo gris muy claro con border-radius
-                out.println("            h1 { color: blue; font-family: Arial, sans-serif; }"); // Estilo para el título h1
-                out.println("            a { font-family: Arial, sans-serif; color: #007bff; text-decoration: none; }"); // Estilo para los enlaces
-                out.println("            a:hover { text-decoration: underline; }"); // Efecto hover para enlaces
+                out.println("            .highlight { border-radius: 5px; background-color: #f9f9f9; padding: 10px; }"); // Gray Background-color with border-radius
+                out.println("            h1 { color: blue; font-family: Arial, sans-serif; }"); // Style for h1
+                out.println("            a { font-family: Arial, sans-serif; color: #007bff; text-decoration: none; }"); // Style for links
+                out.println("            a:hover { text-decoration: underline; }"); // Adding hover effect for links
                 out.println("        </style>");
 
                 out.println("    </head>");
 
                 out.println("    <body>");
-                out.println("        <h1>Login Correcto!</h1>");
-                out.println("        <h3 class='highlight'>Hola " + usernameOptional.get() + ", has iniciado sesión con éxito</h3>");
+                out.println("        <h1>Login Correcto!</h1>"); // Success message indicating the user has logged in
+                out.println("        <h3 class='highlight'>Hola " + usernameOptional.get() + ", has iniciado sesión con éxito</h3>"); // Greeting the user
 
-               // Enlaces con estilo
+                // Providing links to go back or log out
                 out.println("        <p><a href='" + req.getContextPath() + "/index.jsp'>volver</a></p>");
                 out.println("        <p><a href='" + req.getContextPath() + "/logout'>cerrar sesión</a></p>");
 
@@ -62,6 +68,7 @@ public class LoginServlet extends HttpServlet {
                 out.println("</html>");
             }
         }else {
+            // If the user is not logged in, forward to the login page
             req.setAttribute("title",req.getAttribute("title") + ": Login");
             getServletContext().getRequestDispatcher("/login.jsp").forward(req,resp);
         }
@@ -69,19 +76,25 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Extracting the username and password from the request parameters
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
+        // Calling the service to check if the user exists with the provided credentials
         Optional<Usuario> usuarioOptional = service.login(username,password);
 
+        // If the user is authenticated
         if (usuarioOptional.isPresent()){
 
+            // Creating a new session and storing the username
             HttpSession session = req.getSession();
             session.setAttribute("username",username);
 
+            // Redirecting to the login page after a successful login
             resp.sendRedirect(req.getContextPath() + "/login.html");
 
         } else {
+            // If authentication fails, send an unauthorized error with a message
             resp.sendError(HttpServletResponse.SC_UNAUTHORIZED,"Lo sentimos no esta autorizado para ingresar a esta pagina!");
         }
     }
